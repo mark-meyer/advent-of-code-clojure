@@ -12,16 +12,14 @@
 (def data (->>
            (slurp "data/2017/02.txt")
            str/split-lines
-           (map parse-line)
-           ))
+           (map parse-line)))
 
 (defn checksum
   "Find the difference betweent the largest and smalled values in data"
   [data]
-  (- (apply max data) (apply min data))
-  )
+  (- (apply max data) (apply min data)))
 
-(defn part-one 
+(defn part-one
   {:test
    (fn []
      (is (= 18 (part-one [[5 1 9 5]
@@ -30,8 +28,7 @@
   [data]
   (->> data
        (map checksum)
-       (reduce +))
-  )
+       (reduce +)))
 
 
 (defn divisible
