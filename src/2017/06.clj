@@ -5,16 +5,14 @@
 
 (def data (->> (slurp "data/2017/06.txt")
                (#(str/split % #"\s"))
-               (mapv parse-long)
-               ))
+               (mapv parse-long)))
 
 (defn arg-max 
   "returns the index of the largest item returns the first in the case of a tie"
   {:test (fn []
            (is (= 1 (arg-max [9 10 8 7 6])))
            (is (= 1 (arg-max [9 10 8 10 6])))
-           (is (= 4 (arg-max [9 10 8 10 16])))
-           )}
+           (is (= 4 (arg-max [9 10 8 10 16]))))}
   [coll]
   (->> coll
        (map-indexed vector)

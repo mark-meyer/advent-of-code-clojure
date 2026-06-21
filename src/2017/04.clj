@@ -1,7 +1,6 @@
 (ns src.2017.04
-  (:require 
-   [clojure.string :as str])
-  )
+  (:require
+   [clojure.string :as str]))
 
 (def data (->>
            (slurp "data/2017/04.txt")
