@@ -45,17 +45,16 @@
 
 (defn part-two [graph]
   (loop
-  [current-key (first (part-one data))
-   parent nil
-   ] 
-  (let [next-child (first (find-unique-by #(get-weight graph %) (:children (get graph current-key))))]
-    (if (seq next-child)
-      (recur next-child, current-key)
-      (let [weights (child-weights graph parent)
-            sorted   (sort-by val > (frequencies weights))
-            common  (ffirst sorted)
-            odd-one (first (second sorted))]
-        (+ (:weight (get graph current-key)) (- common odd-one )))))))
+   [current-key (first (part-one data))
+    parent nil]
+    (let [next-child (first (find-unique-by #(get-weight graph %) (:children (get graph current-key))))]
+      (if (seq next-child)
+        (recur next-child, current-key)
+        (let [weights (child-weights graph parent)
+              sorted   (sort-by val > (frequencies weights))
+              common  (ffirst sorted)
+              odd-one (first (second sorted))]
+          (+ (:weight (get graph current-key)) (- common odd-one)))))))
 
 (part-one data)
 (part-two (make-graph data))

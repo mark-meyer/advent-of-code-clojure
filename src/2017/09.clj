@@ -28,8 +28,7 @@
            (is (= 1 (part-one "{<a>,<a>,<a>,<a>}")))
            (is (= 9 (part-one "{{<ab>},{<ab>},{<ab>},{<ab>}}")))
            (is (= 9 (part-one "{{<!!>},{<!!>},{<!!>},{<!!>}}")))
-           (is (= 3 (part-one "{{<a!>},{<a!>},{<a!>},{<ab>}}")))
-           )}
+           (is (= 3 (part-one "{{<a!>},{<a!>},{<a!>},{<ab>}}"))))}
   [line]
   (loop [line line
          total-score 0
